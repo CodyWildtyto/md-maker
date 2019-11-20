@@ -1,0 +1,46 @@
+nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    background-color: #fff;
+}
+
+nav .nav-header {
+    position: absolute;
+    padding-top: 20px;
+    width: 100%;
+    height: 200px;
+    background-color: #333;
+    text-align: center;
+    color: #fff;
+}
+
+nav .nav-header h1 {
+    margin: 0;
+}
+
+nav ul {
+    padding-top: 200px;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+nav li {
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+nav li:first-of-type {
+    padding-top: 10px;
+}
+
+nav a {
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
