@@ -1,19 +1,15 @@
 import React from 'react';
+import Header from './Header';
+import Editor from './Editor';
+import Preview from './Preview';
 import '../style/App.css';
 
 function App() {
     return (
         <article className="App">
-            <div className="app-block app-editor">
-                <div className="app-block-container">
-                    <textarea>
-                    </textarea>
-                </div>
-            </div>
-            <div className="app-block app-preview">
-                <div className="app-block-container">
-                </div>
-            </div>
+            <Header />
+            <Editor />
+            <Preview />
         </article>
     );
 }

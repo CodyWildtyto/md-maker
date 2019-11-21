@@ -1,40 +1,34 @@
 import { combineReducers } from 'redux';
+import { DEFAULT_ARTICLES, UPDATE_PREVIEW } from '../actions';
 
-const articles = ( state = [] ) => {
+const articles = ( state = [] , action) => {
 
-        return [
-                ...state, {
-                        id: 'n9oga3ga3',
-                        name: 'Aloha'
-                    }, {
-                        id: 'agn389p34',
-                        name: 'Bluejay'
-                    }, {
-                        id: 'unf8pq34',
-                        name: 'College'
-                    }, {
-                        id: 'pgnv83amg',
-                        name: 'Digital'
-                    }, {
-                        id: 'pan8ugga3',
-                        name: 'Eagle'
-                    }, {
-                        id: 'g9go8anw',
-                        name: 'Fortune'
-                    }, {
-                        id: 'gq34948m',
-                        name: 'Goal'
-                    }, {
-                        id: 'ug8m3g34g4',
-                        name: 'Hugo'
-                    }, {
-                        id: 'g47o9gaweg',
-                        name: 'Interstellar'
-                    }
-            ];
+        switch ( action.type ) {
+            case DEFAULT_ARTICLES:
+                return [
+                        ...state, {
+                                id: action.id,
+                                name: action.name
+                            }
+                    ];
+            default:
+                return state;
+        }
 
     };
 
+const content = ( state = '' , action ) => {
+
+        switch ( action.type ) {
+            case UPDATE_PREVIEW:
+                return action.text;
+            default:
+                return state;
+        }
+
+    }
+
 export default combineReducers({
-        articles
+        articles,
+        content
     });

@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// import { defaultArticles } from '../actions';
 
-const Nav = ({ articles }) => {
+const Nav = ({ articles, dispatch }) => {
 
         return (
                 <nav>
