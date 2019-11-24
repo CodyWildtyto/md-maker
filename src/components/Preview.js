@@ -1,18 +1,30 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import { connect } from 'react-redux';
+// import PropTypes from 'prop-types';
+import { fetchArticle } from '../actions';
+import '../style/Preview.css';
 
-function Preview({ content }) {
+import { useParams } from 'react-router-dom';
+
+function Preview({ content, article, dispatch }) {
+
+    let { id } = useParams();
+    if ( article.id !== id ) dispatch(fetchArticle(id));
+
     return (
         <div className="app-block app-preview">
-            <div className="app-block-container">
-                { content }
-            </div>
+                <p>Hello, { article.name }</p>
+                <div className="app-block-container">
+                    <ReactMarkdown source={ content } />
+                </div>
         </div>
     );
+
 }
 
-const contentToProps = ({ content }) => ({
-        content
+const contentToProps = state => ({
+        article: state.article
     });
 
 export default connect(contentToProps)(Preview);

@@ -6,6 +6,7 @@ import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/markdown/markdown';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/pastel-on-dark.css';
+import '../style/Editor.css';
 
 function Editor(state) {
     return (
@@ -21,7 +22,6 @@ function Editor(state) {
                         onChange={ value => state.dispatch(updatePreview(value)) }
                     />
                 </div>
-                { state.content }
             </div>
         );
 

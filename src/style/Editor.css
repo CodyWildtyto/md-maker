@@ -1,0 +1,8 @@
+.app-editor {
+
+}
+
+.app-editor .ReactCodeMirror,
+.app-editor .CodeMirror {
+    height: 100%;
+}

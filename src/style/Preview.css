@@ -1,0 +1,31 @@
+.app-preview {
+
+}
+
+.app-preview .app-block-container {
+    padding: 20px;
+}
+
+.app-preview h2 {
+
+    border-bottom: 1px solid #ccc;
+}
+
+.app-preview li {
+    margin-left: 20px;
+    list-style: initial;
+}
+
+.app-preview code {
+    padding: 2px 3px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.app-preview pre code {
+    padding: 7px 10px;
+    background-color: #ddd;
+    border-color: #bbb;
+    display: block;
+}

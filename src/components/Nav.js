@@ -1,9 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { defaultArticles } from '../actions';
+import { fetchArticleList } from '../actions';
+
+import {
+    Link
+} from 'react-router-dom';
 
 const Nav = ({ articles, dispatch }) => {
 
+        dispatch(fetchArticleList())
         return (
                 <nav>
                     <div className="nav-header">
@@ -13,9 +18,9 @@ const Nav = ({ articles, dispatch }) => {
                         {
                             articles.map( ({ id, name }) => (
                                     <li key={ id }>
-                                        <a href={ `#/${ id }` }>
+                                        <Link to={ `/${ id }` }>
                                             { name }
-                                        </a>
+                                        </Link>
                                     </li>
                                 ) )
                         }
