@@ -2,6 +2,10 @@
 
 }
 
+.app-editor.app-block {
+    top: 70px;
+}
+
 .app-editor .ReactCodeMirror,
 .app-editor .CodeMirror {
     height: 100%;

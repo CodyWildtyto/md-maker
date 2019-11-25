@@ -3,20 +3,24 @@ import { connect } from 'react-redux';
 import { updatePreview } from '../actions';
 import '../style/Title.css';
 
+let elm;
+
 function Title({ article, dispatch }) {
 
+    if (elm) elm.value = article.subject;
     return (
         <div className="article-title">
             <input type="text"
                     placeholder="Untitled"
                     defaultValue={ article.subject }
-                    onChange={ value => {
+                    onChange={ ({ currentTarget }) => {
                             dispatch(updatePreview({
                                     id: article.id,
-                                    subject: value,
+                                    subject: currentTarget.value,
                                     content: article.content
                                 }));
                         } }
+                    ref={ ref => elm = ref }
                 />
         </div>
     );
