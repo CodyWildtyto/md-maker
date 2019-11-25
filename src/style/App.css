@@ -1,13 +1,22 @@
 .App {
-    margin-left: 200px;
-    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 120px;
+    right: 0;
 }
 
 .app-block {
+    position: absolute;
+    top: 70px;
+    bottom: 0;
     display: inline-block;
     vertical-align: top;
     width: 50%;
-    height: 100%;
+}
+
+.app-block.app-preview {
+    left: 50%;
 }
 
 .app-block-container {

@@ -1,0 +1,48 @@
+ul.list {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 120px;
+    right: 0;
+    overflow-y: scroll;
+}
+
+ul.list li {
+    padding: 0 10px 10px;
+}
+
+ul.list li:first-of-type {
+    padding-top: 10px;
+}
+
+ul.list a {
+    display: block;
+    padding: 20px 24px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+ul.list a > h2 {
+    margin-top: 10px;
+    margin-bottom: 16px;
+    padding-left: 10px;
+    border-left: 7px solid #555;
+    line-height: 1em;
+    font-size: 32px;
+    font-weight: 200;
+    transition-duration: 300ms;
+    transition-property: padding-left, border-color;
+}
+
+ul.list a:hover > h2 {
+    padding-left: 16px;
+    border-color: #333;
+}
+
+ul.list a > div {
+    padding: 20px;
+    max-height: 240px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}

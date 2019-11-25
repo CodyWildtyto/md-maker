@@ -2,7 +2,8 @@ import api from './api';
 
 export default {
         list,
-        item
+        item,
+        set
     };
 
 function list() {
@@ -15,10 +16,15 @@ function list() {
 }
 
 function item (id) {
-    return new Promise( resolver => {
+    return new Promise( (resolver, reject) => {
              api.fetchArticle(id)
                 .then( ({ data }) => {
                     resolver(data);
-                } );
+                } )
+                .catch( () => reject() );
         } );
+}
+
+function set ({ id, subject, content}) {
+    return;
 }

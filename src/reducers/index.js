@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { DEFAULT_ARTICLES, FETCH_ARTICLE_LIST, FETCH_ARTICLE, UPDATE_PREVIEW } from '../actions';
+import { DEFAULT_ARTICLES, FETCH_ARTICLE_LIST, FETCH_ARTICLE, NEW_ARTICLE, UPDATE_PREVIEW } from '../actions';
 
 const articles = ( state = [] , action) => {
 
@@ -8,7 +8,7 @@ const articles = ( state = [] , action) => {
                 return [
                         ...state, {
                                 id: action.id,
-                                name: action.name
+                                subject: action.subject
                             }
                     ];
             case FETCH_ARTICLE_LIST:
@@ -25,7 +25,20 @@ const article = ( state = {} , action ) => {
             case FETCH_ARTICLE:
                 return {
                         id: action.id,
-                        name: action.name
+                        subject: action.subject,
+                        content: action.content
+                    };
+            case UPDATE_PREVIEW:
+                return {
+                        id: action.id,
+                        subject: action.subject,
+                        content: action.content
+                    };
+            case NEW_ARTICLE:
+                return {
+                        id: action.id,
+                        subject: action.subject,
+                        content: action.content
                     };
             default:
                 return state;
@@ -33,19 +46,7 @@ const article = ( state = {} , action ) => {
 
     };
 
-const content = ( state = '' , action ) => {
-
-        switch ( action.type ) {
-            case UPDATE_PREVIEW:
-                return action.text;
-            default:
-                return state;
-        }
-
-    }
-
 export default combineReducers({
         articles,
-        article,
-        content
+        article
     });

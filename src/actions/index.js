@@ -3,12 +3,13 @@ import article from '../factory/article';
 export const DEFAULT_ARTICLES = 'DEFAULT_ARTICLES';
 export const FETCH_ARTICLE_LIST = 'FETCH_ARTICLE_LIST';
 export const FETCH_ARTICLE = 'FETCH_ARTICLE';
+export const NEW_ARTICLE = 'NEW_ARTICLE';
 export const UPDATE_PREVIEW = 'UPDATE_PREVIEW';
 
-export const defaultArticles = (id, name) => ({
+export const defaultArticles = (id, subject) => ({
         type: DEFAULT_ARTICLES,
         id,
-        name
+        subject
     });
 
 export const readArticles = articles => ({
@@ -16,20 +17,39 @@ export const readArticles = articles => ({
         articles
     });
 
-export function readArticle({ id, name }) {
+export function readArticle({ id, subject, content }) {
 
     return {
         type: FETCH_ARTICLE,
         id,
-        name
+        subject,
+        content
     };
 
 }
 
-export const updatePreview = text => ({
+export function newArticle() {
+
+    return {
+        type: NEW_ARTICLE,
+        id: '',
+        subject: '',
+        content: ''
+    };
+
+}
+
+export const updatePreview = ({ id, subject, content }) => {
+
+    article.set({ id, subject, content });
+    return {
         type: UPDATE_PREVIEW,
-        text
-    });
+        id,
+        subject,
+        content
+    };
+
+}
 
 export function fetchArticleList() {
 

@@ -1,0 +1,14 @@
+.App .article-title {
+    height: 70px;
+    background-color: #3a3a3a;
+}
+
+.App .article-title input {
+    display: block;
+    padding-left: 24px;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    font-size: 36px;
+    color: #fff;
+}
