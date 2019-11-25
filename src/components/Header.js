@@ -7,13 +7,14 @@ import {
 } from 'react-router-dom';
 
 function Header() {
+
     return (
         <header>
             <h1>
                 <strong>MD:</strong>Maker
             </h1>
             <nav>
-                <Link to="/new">NEW</Link>
+                <Link to={ () => `/${ +new Date() }` }>NEW</Link>
                 <Switch>
                     <Route exact path={ [`/:id`, `/new`] }>
                         <Link to={ `/` }>HOME</Link>
@@ -22,6 +23,7 @@ function Header() {
             </nav>
         </header>
     );
+
 }
 
 export default Header;

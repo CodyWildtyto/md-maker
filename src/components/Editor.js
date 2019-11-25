@@ -28,11 +28,11 @@ function Editor({ article, dispatch }) {
                     <CodeMirror
                         value={ article.content }
                         options={ {
-                            mode: 'javascript',
-                            lineNumbers: true,
-                            lineWrapping: true,
-                            theme: 'pastel-on-dark',
-                        } }
+                                mode: 'javascript',
+                                lineNumbers: true,
+                                lineWrapping: true,
+                                theme: 'pastel-on-dark',
+                            } }
                         onChange={ value => dispatch(updatePreview({
                                 id: article.id,
                                 subject: article.subject,
@@ -60,9 +60,9 @@ const contentToProps = state => ({
 
 Editor.propTypes = {
         article: PropTypes.shape({
-                id: PropTypes.string.isRequired,
-                subject: PropTypes.string.isRequired,
-                content: PropTypes.string.isRequired
+                id: PropTypes.string,
+                subject: PropTypes.string,
+                content: PropTypes.string
             }).isRequired
     };
 

@@ -8,7 +8,7 @@
 
 .app-block {
     position: absolute;
-    top: 70px;
+    top: 0;
     bottom: 0;
     display: inline-block;
     vertical-align: top;
